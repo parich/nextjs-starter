@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next.js Starter Project
 
-## Getting Started
+Starter Template สำหรับการพัฒนาเว็บแอปพลิเคชันด้วย Next.js พร้อมการรวมเทคโนโลยี Prisma, TailwindCSS, React Hook Form และ NextAuth
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📦 เทคโนโลยีที่ใช้
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** 15.4.4
+- **React** 19.1.0
+- **TailwindCSS** 4
+- **Prisma ORM** 6.12.0
+- **NextAuth** สำหรับระบบ Authentication
+- **React Hook Form** สำหรับจัดการฟอร์ม
+- **Zod** สำหรับ validation
+- **Radix UI** สำหรับ UI Components
+- **Lucide Icons** สำหรับไอคอน
+- **UUID** สำหรับการสร้าง ID แบบไม่ซ้ำ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ คำสั่งที่ใช้บ่อย
 
-## Learn More
+| คำสั่ง                | รายละเอียด                     |
+| --------------------- | ------------------------------ |
+| `npm run dev`         | เริ่มเซิร์ฟเวอร์ในโหมดพัฒนา    |
+| `npm run build`       | สร้างโปรเจกต์สำหรับ production |
+| `npm start`           | เริ่มเซิร์ฟเวอร์ production    |
+| `npm run lint`        | ตรวจสอบโค้ดด้วย ESLint         |
+| `npm run db:push`     | ส่ง schema ไปยังฐานข้อมูล      |
+| `npm run db:studio`   | เปิด Prisma Studio             |
+| `npm run db:generate` | สร้าง Prisma client ใหม่       |
+| `npm run db:seed`     | รันสคริปต์ seed ข้อมูล         |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 การเริ่มต้นใช้งาน
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. ติดตั้ง dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+## 🧭 เส้นทาง
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Path                           | รายละเอียด                           |
+| ------------------------------ | ------------------------------------ |
+| `/profile`                     | จัดการโปรไฟล์ผู้ใช้                  |
+| `/auth/new-password?token=xxx` | ตั้งรหัสผ่านใหม่ผ่านลิงก์ที่มี token |
+| `/dashboard`                   | แดชบอร์ด                             |
+| `/auth/reset-password`         | หน้า rest password                   |
+| `/auth/signin`                 | หน้า login                           |
+| `/auth/signup`                 | หน้าสมัคร                            |
