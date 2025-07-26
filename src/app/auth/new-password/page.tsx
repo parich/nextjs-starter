@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description: "ตั้งรหัสผ่านใหม่ของคุณ",
 };
 
-interface NewPasswordPageProps {
-  searchParams: {
+type NewPasswordPageProps = {
+  searchParams: Promise<{
     token?: string;
-  };
-}
+  }>;
+};
 
-export default function NewPasswordPage({
+export default async function NewPasswordPage({
   searchParams,
 }: NewPasswordPageProps) {
-  const token = searchParams.token;
+  const token = await searchParams.then((params) => params.token);
 
   return (
     <div className="container flex min-h-screen w-full flex-col items-center justify-center px-4">
