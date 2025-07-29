@@ -13,6 +13,8 @@ import {
   type ResetPasswordInput,
 } from "@/lib/validations/auth";
 import { resetPasswordAction } from "@/app/actions/auth";
+import { SuccessAlert } from "../alerts/success-alert";
+import { DestructiveAlert } from "../alerts/destructive-alert";
 
 export function ResetPasswordForm() {
   const [error, setError] = useState<string | undefined>("");
@@ -56,22 +58,15 @@ export function ResetPasswordForm() {
               {...register("email")}
             />
             {errors?.email && (
-              <p className="px-1 text-xs text-red-600">
-                {errors.email.message}
-              </p>
+              <DestructiveAlert
+                title="อีเมลไม่ถูกต้อง"
+                message={errors.email.message || "กรุณากรอกอีเมลให้ถูกต้อง"}
+              />
             )}
           </div>
-          {error && (
-            <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-          {success && (
-            <Alert>
-              <AlertDescription>{success}</AlertDescription>
-            </Alert>
-          )}
-          <Button disabled={isPending}>
+          {error && <DestructiveAlert message={error} />}
+          {success && <SuccessAlert message={success} />}
+          <Button disabled={isPending || !!success}>
             {isPending ? "กำลังส่งอีเมล..." : "ส่งลิงก์รีเซ็ตรหัสผ่าน"}
           </Button>
         </div>

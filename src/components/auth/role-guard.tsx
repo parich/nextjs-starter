@@ -69,6 +69,7 @@ export function useRole() {
     isLoading: status === "loading",
     isAuthenticated: !!session?.user,
     role: session?.user?.role,
+    isTwoFactorEnabled: session?.user?.isTwoFactorEnabled, // เพิ่มฟิลด์นี้
     hasRole: (roles: Role[]) =>
       session?.user ? roles.includes(session.user.role) : false,
     isAdmin: () => session?.user?.role === "ADMIN",

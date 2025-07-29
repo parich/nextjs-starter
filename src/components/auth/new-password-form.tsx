@@ -14,6 +14,8 @@ import {
   type NewPasswordInput,
 } from "@/lib/validations/auth";
 import { newPasswordAction } from "@/app/actions/auth";
+import { SuccessAlert } from "../alerts/success-alert";
+import { DestructiveAlert } from "../alerts/destructive-alert";
 
 interface NewPasswordFormProps {
   token?: string;
@@ -65,7 +67,7 @@ export function NewPasswordForm({ token }: NewPasswordFormProps) {
         <div className="grid gap-4">
           <div className="grid gap-1">
             <Label htmlFor="password">รหัสผ่านใหม่</Label>
-            <div className="relative">
+            <div className="relative py-4">
               <Input
                 id="password"
                 placeholder="รหัสผ่านใหม่"
@@ -129,16 +131,8 @@ export function NewPasswordForm({ token }: NewPasswordFormProps) {
               </p>
             )}
           </div>
-          {error && (
-            <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-          {success && (
-            <Alert>
-              <AlertDescription>{success}</AlertDescription>
-            </Alert>
-          )}
+          {error && <DestructiveAlert message={error} />}
+          {success && <SuccessAlert message={success} />}
           <Button disabled={isPending}>
             {isPending ? "กำลังอัปเดต..." : "อัปเดตรหัสผ่าน"}
           </Button>

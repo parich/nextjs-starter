@@ -11,27 +11,30 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  role          Role      @default(USER)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id                  String    @id @default(cuid())
+  name                String?
+  email               String    @unique
+  emailVerified       DateTime?
+  image               String?
+  password            String?
+  role                Role      @default(USER)
+  isTwoFactorEnabled  Boolean   @default(false) // เพิ่มฟิลด์นี้สำหรับ 2FA
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 
   // Relations
-  accounts      Account[]
-  sessions      Session[]
-  posts         Post[]
-  comments      Comment[]
-  likes         Like[]
-  followers     Follow[] @relation("UserFollowers")
-  following     Follow[] @relation("UserFollowing")
+  accounts            Account[]
+  sessions            Session[]
+  posts               Post[]
+  comments            Comment[]
+  likes               Like[]
+  followers           Follow[] @relation("UserFollowers")
+  following           Follow[] @relation("UserFollowing")
   
   // Password reset
   passwordResetTokens PasswordResetToken[]
+  // Two Factor Auth
+  twoFactorTokens     TwoFactorToken[] // เพิ่มความสัมพันธ์นี้สำหรับ 2FA
 
   @@map("users")
 }
@@ -84,6 +87,20 @@ model PasswordResetToken {
   user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("password_reset_tokens")
+}
+
+// เพิ่มโมเดล TwoFactorToken สำหรับ 2FA
+model TwoFactorToken {
+  id        String    @id @default(cuid())
+  email     String
+  token     String    @unique
+  expires   DateTime
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  @@unique([email, token])
+  @@map("two_factor_tokens")
 }
 
 model Post {

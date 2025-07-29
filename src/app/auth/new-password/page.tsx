@@ -19,7 +19,7 @@ export default async function NewPasswordPage({
   const token = await searchParams.then((params) => params.token);
 
   return (
-    <div className="container flex min-h-screen w-full flex-col items-center justify-center px-4">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center px-8">
       <div className="mx-auto flex w-full max-w-sm flex-col justify-center space-y-6">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
