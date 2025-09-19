@@ -17,7 +17,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { createPostSchema, type CreatePostInput } from "@/lib/validations/post";
-import { createPostAction } from "@/app/actions/user";
+import { createPostAction } from "@/app/actions/(auth)/user";
 import { Loader2 } from "lucide-react";
 
 export function CreatePostForm() {

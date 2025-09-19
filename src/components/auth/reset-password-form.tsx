@@ -12,7 +12,7 @@ import {
   resetPasswordSchema,
   type ResetPasswordInput,
 } from "@/lib/validations/auth";
-import { resetPasswordAction } from "@/app/actions/auth";
+import { resetPasswordAction } from "@/app/actions/(auth)/auth";
 import { SuccessAlert } from "../alerts/success-alert";
 import { DestructiveAlert } from "../alerts/destructive-alert";
 

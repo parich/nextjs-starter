@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { createTestPostAction } from "@/app/actions/user";
+import { createTestPostAction } from "@/app/actions/(auth)/user";
 import { Loader2, Zap } from "lucide-react";
 
 export function QuickTestForm() {

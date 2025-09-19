@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle, XCircle, Loader2, Mail } from "lucide-react";
-import { verifyEmailAction } from "@/app/actions/auth";
+import { verifyEmailAction } from "@/app/actions/(auth)/auth";
 
 interface VerifyEmailFormProps {
   token?: string;

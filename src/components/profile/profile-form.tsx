@@ -17,7 +17,7 @@ import {
   updateProfileAction,
   changePasswordAction,
   toggleTwoFactorAction,
-} from "@/app/actions/profile"; // Import new action
+} from "@/app/actions/(auth)/profile"; // Import new action
 import { z } from "zod";
 
 // Schema สำหรับอัปเดตโปรไฟล์ (ไม่มี email แล้ว)

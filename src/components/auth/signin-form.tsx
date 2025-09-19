@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { loginSchema, type LoginInput } from "@/lib/validations/auth";
 import { OAuthButtons } from "@/components/auth/oauth-buttons";
-import { signInAction } from "@/app/actions/auth";
+import { signInAction } from "@/app/actions/(auth)/auth";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function SignInForm() {

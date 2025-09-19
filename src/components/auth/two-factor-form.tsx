@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { verifyTwoFactorAction } from "@/app/actions/auth";
+import { verifyTwoFactorAction } from "@/app/actions/(auth)/auth";
 
 const twoFactorSchema = z.object({
   code: z.string().min(6, "กรุณาใส่รหัส 6 หลัก").max(6, "กรุณาใส่รหัส 6 หลัก"),

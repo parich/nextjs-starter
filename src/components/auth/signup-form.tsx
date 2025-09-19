@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { registerSchema, type RegisterInput } from "@/lib/validations/auth";
-import { signUpAction } from "@/app/actions/auth";
+import { signUpAction } from "@/app/actions/(auth)/auth";
 import { OAuthButtons } from "@/components/auth/oauth-buttons";
 
 export function SignUpForm() {

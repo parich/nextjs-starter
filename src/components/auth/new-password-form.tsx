@@ -13,7 +13,7 @@ import {
   newPasswordSchema,
   type NewPasswordInput,
 } from "@/lib/validations/auth";
-import { newPasswordAction } from "@/app/actions/auth";
+import { newPasswordAction } from "@/app/actions/(auth)/auth";
 import { SuccessAlert } from "../alerts/success-alert";
 import { DestructiveAlert } from "../alerts/destructive-alert";
 
