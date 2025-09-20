@@ -119,3 +119,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .main-content {
+    @apply pt-24 sm:pt-28 lg:pt-32 min-h-screen transition-all duration-300;
+  }
+
+  .main-content-padded {
+    @apply pt-24 sm:pt-28 lg:pt-32 px-4 pb-12 transition-all duration-300;
+  }
+
+  /* Dynamic header height classes */
+  .main-content-compact {
+    @apply pt-16 sm:pt-20 lg:pt-24 min-h-screen transition-all duration-300;
+  }
+
+  .main-content-padded-compact {
+    @apply pt-16 sm:pt-20 lg:pt-24 px-4 pb-12 transition-all duration-300;
+  }
+
+  /* Header height utility for consistent spacing */
+  .header-offset {
+    @apply mt-24 sm:mt-28 lg:mt-32;
+  }
+
+  .header-offset-compact {
+    @apply mt-16 sm:mt-20 lg:mt-24;
+  }
+}

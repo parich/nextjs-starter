@@ -1,3 +1,4 @@
+import { MainLayoutPadded } from "@/components/layouts/MainLayout";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,14 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Shield, Users, Lock, Zap } from "lucide-react";
-import { Navbar } from "@/components/navigation/navbar";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Navbar />
-
-      <main className="container mx-auto px-4 py-12">
+    <MainLayoutPadded className="bg-gradient-to-br from-blue-50 to-indigo-100">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-6xl mb-6">
@@ -132,7 +129,38 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </main>
-    </div>
+
+        {/* Test Content for Scrolling */}
+        <div className="mt-32 space-y-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">เพิ่มเนื้อหาเพื่อทดสอบ Scroll</h2>
+            <p className="text-lg text-gray-600 mb-16">เลื่อนลงเพื่อดู Top Banner หายไป</p>
+          </div>
+
+          {Array.from({ length: 10 }, (_, i) => (
+            <div key={i} className="bg-white rounded-lg shadow-md p-8 mx-auto max-w-4xl">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">ส่วนที่ {i + 1}</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+              </p>
+              <br />
+              <p className="text-gray-600 leading-relaxed">
+                เนื้อหาภาษาไทยเพื่อทดสอบ Scroll Behavior ของ Header ที่เราสร้างขึ้น
+                เมื่อเลื่อนลงมา Top Banner ควรจะหายไป และเมื่อเลื่อนขึ้นไป ควรจะกลับมาแสดง
+                พร้อมกับ Animation ที่นุ่มนวล
+              </p>
+            </div>
+          ))}
+
+          <div className="text-center py-16">
+            <p className="text-lg text-gray-600">จบการทดสอบ - เลื่อนขึ้นเพื่อดู Top Banner กลับมา</p>
+          </div>
+        </div>
+    </MainLayoutPadded>
   );
 }

@@ -3,6 +3,7 @@ import { Sarabun } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/providers/session-provider";
 import { ToasterProvider } from "@/components/providers/toaster-provider";
+import { HeaderProvider } from "@/components/providers/HeaderProvider";
 import { auth } from "@/lib/auth";
 
 const sarabun = Sarabun({
@@ -28,7 +29,12 @@ export default async function RootLayout({
         className={`${sarabun.variable} font-sans antialiased`}
       >
         <AuthProvider session={session}>
-          {children} <ToasterProvider />
+          <HeaderProvider>
+            <div className="min-h-screen">
+              {children}
+            </div>
+          </HeaderProvider>
+          <ToasterProvider />
         </AuthProvider>
       </body>
     </html>
