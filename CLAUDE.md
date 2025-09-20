@@ -170,3 +170,38 @@ RESEND_API_KEY=""
 - Styling: Tailwind utility classes, minimal custom CSS
 - Icons: Lucide React with consistent sizing (h-4 w-4)
 - Forms: Always use Zod + React Hook Form + Server Actions pattern
+
+### Code Reusability & DRY Principles
+- **ALWAYS analyze existing code first**: Before creating new components, hooks, utilities, or data fetchers:
+  1. Search existing codebase for similar functionality using Grep/Glob tools
+  2. Check `src/components/`, `src/lib/`, `src/hooks/`, `src/types/` directories
+  3. Review existing patterns and conventions in the codebase
+  4. Reuse and extend existing components/utilities instead of creating duplicates
+- **Component reuse**: Look for existing UI components in `src/components/ui/` and `src/components/`
+- **Hook reuse**: Check `src/hooks/` or component files for existing custom hooks
+- **Utility reuse**: Examine `src/lib/` for existing helper functions, validators, and utilities
+- **Type reuse**: Review `src/types/` for existing TypeScript definitions
+- **Data fetching**: Check existing Server Actions and API routes before creating new ones
+- **Ask before creating**: If similar functionality might exist, ask user for confirmation before creating new files
+
+### Semantic HTML & Accessibility Standards
+- **ALWAYS use semantic HTML elements**: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`
+- **Required ARIA attributes**: Add `role`, `aria-label`, `aria-labelledby`, `aria-expanded`, `aria-controls` where appropriate
+- **Heading hierarchy**: Use proper h1-h6 structure, add `sr-only` class for hidden headings when needed
+- **Navigation**: Mark all nav areas with `role="navigation"` and descriptive `aria-label`
+- **Interactive elements**: Always include `aria-label` for buttons, links that open in new windows
+- **Icons**: Add `aria-hidden="true"` to decorative icons, descriptive labels for functional icons
+- **Forms**: Connect labels with form controls, use fieldsets for grouped inputs
+- **Images**: Always include meaningful `alt` attributes or `aria-hidden="true"` for decorative images
+
+### SEO Standards
+- **Page metadata**: Always include proper `<title>`, `<meta description>`, and Open Graph tags
+- **Structured data**: Add JSON-LD schema markup for content types (Article, Organization, Website)
+- **URL structure**: Use descriptive, keyword-rich slugs with proper hierarchy
+- **Internal linking**: Include relevant internal links with descriptive anchor text
+- **Image SEO**: Optimize `alt` attributes for search engines, use descriptive filenames
+- **Performance**: Implement lazy loading, optimize Core Web Vitals (LCP, FID, CLS)
+- **Mobile-first**: Ensure responsive design and mobile usability
+- **Canonical URLs**: Add canonical tags to prevent duplicate content issues
+- **Robots meta**: Use appropriate `robots` meta tags for indexing control
+- **Sitemap**: Generate and maintain XML sitemap for better crawling
