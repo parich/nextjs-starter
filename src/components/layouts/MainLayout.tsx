@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/headers/Header";
+import Footer from "@/components/footers/Footer";
 import { useHeader } from "@/components/providers/HeaderProvider";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,7 @@ export default function MainLayout({
       >
         {children}
       </main>
+      <Footer />
     </div>
   );
 }
@@ -45,6 +47,7 @@ export function MainLayoutPadded({
       >
         {children}
       </main>
+      <Footer />
     </div>
   );
 }

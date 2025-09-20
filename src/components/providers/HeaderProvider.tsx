@@ -30,16 +30,12 @@ export function HeaderProvider({ children }: HeaderProviderProps) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      console.log('Scroll:', currentScrollY, 'Last:', lastScrollY, 'Banner:', showTopBanner);
-
       // Show/hide top banner based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Scrolling down
-        console.log('Hiding banner');
         setShowTopBanner(false);
       } else if (currentScrollY < lastScrollY) {
         // Scrolling up
-        console.log('Showing banner');
         setShowTopBanner(true);
       }
 

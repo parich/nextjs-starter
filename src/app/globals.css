@@ -122,20 +122,24 @@
 
 @layer components {
   .main-content {
-    @apply pt-24 sm:pt-28 lg:pt-32 min-h-screen transition-all duration-300;
+    @apply pt-24 sm:pt-28 lg:pt-32 transition-all duration-300;
+    min-height: calc(100vh - 200px);
   }
 
   .main-content-padded {
     @apply pt-24 sm:pt-28 lg:pt-32 px-4 pb-12 transition-all duration-300;
+    min-height: calc(100vh - 200px);
   }
 
   /* Dynamic header height classes */
   .main-content-compact {
-    @apply pt-16 sm:pt-20 lg:pt-24 min-h-screen transition-all duration-300;
+    @apply pt-16 sm:pt-20 lg:pt-24 transition-all duration-300;
+    min-height: calc(100vh - 200px);
   }
 
   .main-content-padded-compact {
     @apply pt-16 sm:pt-20 lg:pt-24 px-4 pb-12 transition-all duration-300;
+    min-height: calc(100vh - 200px);
   }
 
   /* Header height utility for consistent spacing */

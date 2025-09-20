@@ -91,13 +91,16 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300",
         isScrolled ? "shadow-lg" : "shadow-sm"
       )}
+      role="banner"
     >
       {/* Top Banner */}
-      <div
+      <aside
         className={cn(
           "bg-gradient-to-r from-purple-600 to-blue-600 text-white text-center text-sm font-medium transition-all duration-300 ease-in-out overflow-hidden",
           showTopBanner ? "py-2 max-h-20 opacity-100" : "py-0 max-h-0 opacity-0"
         )}
+        aria-label="ประกาศส่งเสริมการขาย"
+        role="complementary"
       >
         <div className="container mx-auto px-4">
           <p className="mb-0">
@@ -107,12 +110,14 @@ export default function Header() {
               className="text-white hover:text-gray-200 inline-flex items-center underline"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="ซื้อเทมเพลตตอนนี้ (เปิดหน้าต่างใหม่)"
             >
               Grab Your Copy Now
               <svg
                 className="w-4 h-4 ml-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -123,7 +128,7 @@ export default function Header() {
             </a>
           </p>
         </div>
-      </div>
+      </aside>
 
       {/* Main Navigation */}
       <nav
@@ -133,12 +138,18 @@ export default function Header() {
             ? "border-gray-200"
             : "border-transparent"
         )}
+        role="navigation"
+        aria-label="เมนูหลัก"
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="text-2xl font-bold text-gray-800">
+              <Link
+                href="/"
+                className="text-2xl font-bold text-gray-800"
+                aria-label="กลับสู่หน้าแรก"
+              >
                 Sandbox
               </Link>
             </div>
@@ -147,27 +158,31 @@ export default function Header() {
             <Navigation />
 
             {/* Desktop CTA Button */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <aside className="hidden lg:flex items-center space-x-4" aria-label="การกระทำหลัก">
               <a
                 href="https://themeforest.net/item/sandbox-modern-multipurpose-tailwind-css-nextjs-template/57540184"
                 className="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="ซื้อเทมเพลตตอนนี้ (เปิดหน้าต่างใหม่)"
               >
                 Purchase Now
               </a>
-            </div>
+            </aside>
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMobileMenuOpen ? "ปิดเมนูมือถือ" : "เปิดเมนูมือถือ"}
               >
                 {isMobileMenuOpen ? (
-                  <X className="block h-6 w-6" />
+                  <X className="block h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <Menu className="block h-6 w-6" />
+                  <Menu className="block h-6 w-6" aria-hidden="true" />
                 )}
               </button>
             </div>
@@ -176,10 +191,10 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200">
+          <div id="mobile-menu" className="lg:hidden border-t border-gray-200" role="region" aria-label="เมนูมือถือ">
             <div className="px-4 py-6 space-y-6 max-h-[calc(100vh-200px)] overflow-y-auto">
               {/* Mobile menu items */}
-              <div className="space-y-4">
+              <nav className="space-y-4" aria-label="รายการเมนู">
                 {/* Demos Section */}
                 <div>
                   <button className="w-full flex items-center justify-between py-2 text-left text-gray-700 hover:text-purple-600 font-medium">
@@ -263,7 +278,7 @@ export default function Header() {
                     Documentation
                   </button>
                 </div>
-              </div>
+              </nav>
 
               {/* Mobile Social Links */}
               <div className="pt-6 border-t border-gray-200">
