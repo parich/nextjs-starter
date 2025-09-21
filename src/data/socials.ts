@@ -1,7 +1,9 @@
+import { Twitter, Facebook, Instagram, Youtube, Github } from "lucide-react";
+
 export const socialLinks = [
-  { icon: "uil-twitter", unicode: "\\ed59", color: "#5daed5", href: "#" },
-  { icon: "uil-facebook-f", unicode: "\\eae2", color: "#4470cf", href: "#" },
-  { icon: "uil-dribbble", unicode: "\\eaa2", color: "#e94d88", href: "#" },
-  { icon: "uil-instagram", unicode: "\\eb9c", color: "#d53581", href: "#" },
-  { icon: "uil-youtube", unicode: "\\edb5", color: "#c8312b", href: "#" },
+  { icon: Twitter, name: "Twitter", color: "#1DA1F2", href: "#" },
+  { icon: Facebook, name: "Facebook", color: "#4267B2", href: "#" },
+  { icon: Instagram, name: "Instagram", color: "#E4405F", href: "#" },
+  { icon: Youtube, name: "YouTube", color: "#FF0000", href: "#" },
+  { icon: Github, name: "GitHub", color: "#333333", href: "#" },
 ];
